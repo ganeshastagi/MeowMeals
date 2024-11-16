@@ -7,4 +7,7 @@
     <string name="password">Password</string>
     <string name="register">Register</string>
     <string name="Create">Create an account? Click below</string>
+    <string name="Account">Have an account? Click Login</string>
+    <string name="register_text">Register</string>
+    <string name="name">Full Name</string>
 </resources>
