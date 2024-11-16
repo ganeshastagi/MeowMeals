@@ -40,18 +40,18 @@
         android:id="@+id/email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:background="@color/white"
         android:autofillHints="emailAddress"
+        android:background="@color/white"
+        android:ems="10"
         android:hint="@string/email"
+        android:inputType="textEmailAddress"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.058" />
 
     <EditText
         android:id="@+id/Password"
