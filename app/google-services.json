@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642449936126",
+    "project_id": "meowmeals-bd649",
+    "storage_bucket": "meowmeals-bd649.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642449936126:android:730d83c2cd24e106b49faf",
+        "android_client_info": {
+          "package_name": "com.example.project2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm8VTuHnLA8oIMGqVU34N6FL4lSclvjl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
