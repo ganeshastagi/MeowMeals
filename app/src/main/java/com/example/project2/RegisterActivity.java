@@ -15,16 +15,21 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.project2.models.UserModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
     EditText fullName, email, password;
     Button register;
     FirebaseAuth auth;
+    FirebaseDatabase database;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.Password);
         register = findViewById(R.id.register_button);
         auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +114,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+
+                    UserModel userModel = new UserModel(Name, Email, Password);
+                    String id = task.getResult().getUser().getUid();
+                    database.getReference().child("users").child(id).setValue(userModel);
                     Toast.makeText(RegisterActivity.this, "Successfully Registered!!!", Toast.LENGTH_SHORT).show();
                     fullName.setText("");
                     email.setText("");
@@ -120,8 +130,6 @@ public class RegisterActivity extends AppCompatActivity {
                         errorMessage = "This email is already registered. Please use another email.";
                     } else if (exception instanceof com.google.firebase.auth.FirebaseAuthInvalidCredentialsException) {
                         errorMessage = "Please enter a valid email address.";
-                    } else if (exception instanceof com.google.firebase.auth.FirebaseAuthWeakPasswordException) {
-                        errorMessage = "Password is too weak. Use a strong password.";
                     } else {
                         errorMessage = "Registration failed. Please try again.";
                     }
