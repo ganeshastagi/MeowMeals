@@ -12,4 +12,6 @@
     <string name="name">Full Name</string>
     <string name="cart_button">TODO</string>
     <string name="products">Products</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="product_image">product_image</string>
 </resources>
