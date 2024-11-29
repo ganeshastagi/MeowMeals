@@ -47,7 +47,7 @@ public class ProductsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         productsList = new ArrayList<>();
-        productsAdapter = new ProductsAdapter(this, productsList);
+        productsAdapter = new ProductsAdapter(ProductsActivity.this, productsList);
         recyclerView.setAdapter(productsAdapter);
 
         db.collection("Products")

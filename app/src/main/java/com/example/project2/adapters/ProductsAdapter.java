@@ -22,8 +22,8 @@ import java.util.List;
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ProductViewHolder> {
 
-    private Context context;
-    private List<Products> productsList;
+    private final Context context;
+    private final List<Products> productsList;
 
     public ProductsAdapter(Context context, List<Products> productsList) {
         this.context = context;

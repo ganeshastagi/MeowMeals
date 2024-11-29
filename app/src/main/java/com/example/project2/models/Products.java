@@ -7,7 +7,9 @@ public class Products {
     private String imageURL;
 
     public Products() {
+
     }
+
     public Products(String name, String description, double price, String imageURL) {
         this.name = name;
         this.description = description;
