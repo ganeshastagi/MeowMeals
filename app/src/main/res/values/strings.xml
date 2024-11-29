@@ -14,4 +14,15 @@
     <string name="products">Products</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="product_image">product_image</string>
+    <string name="cart">Cart</string>
+    <string name="product_img">TODO</string>
+    <string name="minus">-</string>
+    <string name="qty_input">1</string>
+    <string name="plus">+</string>
+    <string name="go_to_cart">Go to Cart</string>
+    <string name="increase_qty">TODO</string>
+    <string name="decrease_qty">TODO</string>
+    <string name="go_to_checkout">Go to Checkout</string>
+    <string name="decrease_quantity">TODO</string>
+    <string name="total_0_00">Total: $0.00</string>
 </resources>

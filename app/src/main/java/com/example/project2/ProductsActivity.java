@@ -1,6 +1,8 @@
 package com.example.project2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -50,6 +52,14 @@ public class ProductsActivity extends AppCompatActivity {
         productsAdapter = new ProductsAdapter(ProductsActivity.this, productsList);
         recyclerView.setAdapter(productsAdapter);
 
+        findViewById(R.id.cart).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductsActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
         db.collection("Products")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -66,5 +76,6 @@ public class ProductsActivity extends AppCompatActivity {
                         }
                     }
                 });
+
     }
 }

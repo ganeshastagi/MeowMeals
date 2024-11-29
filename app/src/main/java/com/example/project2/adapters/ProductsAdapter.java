@@ -4,6 +4,7 @@ import static java.lang.String.*;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.project2.ProductDetailsActivity;
 import com.example.project2.R;
 import com.example.project2.models.Products;
 
@@ -47,6 +49,17 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
 
         Glide.with(context).load(products.getImageURL()).into(holder.image);
         //holder.addToCart.setOnClickListener();
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductDetailsActivity.class);
+                intent.putExtra("product_name", products.getName());
+                intent.putExtra("product_desc", products.getDescription());
+                intent.putExtra("product_price", products.getPrice());
+                intent.putExtra("product_img", products.getImageURL());
+                context.startActivity(intent);
+            }
+        });
 
     }
 
