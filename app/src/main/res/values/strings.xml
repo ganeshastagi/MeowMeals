@@ -25,4 +25,26 @@
     <string name="go_to_checkout">Go to Checkout</string>
     <string name="decrease_quantity">TODO</string>
     <string name="total_0_00">Total: $0.00</string>
+    <string name="checkout">Checkout</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="mailing_address">Mailing Address</string>
+    <string name="pin_code">Pin code</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="payment_options">Payment Options</string>
+    <string name="credit_debit_card">Credit/Debit Card</string>
+    <string name="payment_portal">Payment Portal</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="card_number">Card Number</string>
+    <string name="cvv">CVV</string>
+    <string name="mm_yy">MMYY</string>
+    <string name="https_meowmeals_com_payments">https://meowmeals.com/payments/</string>
+    <string name="submit_order">Submit Order</string>
+    <string name="apt_building_no">Apt/Building No.</string>
+    <string name="street_address">Street Address</string>
+    <string name="city_province">City, Province</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="full_name">Full Name</string>
+    <string name="thank_you">Thank you!!!</string>
+    <string name="go_to_products">Go to Products</string>
 </resources>

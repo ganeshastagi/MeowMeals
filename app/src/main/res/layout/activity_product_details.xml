@@ -102,6 +102,7 @@
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:text="@string/add_to_cart"
+                android:textSize="16sp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/cyan"
                 android:layout_marginEnd="8dp" />
@@ -114,6 +115,7 @@
                 android:layout_weight="1"
                 android:text="@string/go_to_cart"
                 android:textStyle="bold"
+                android:textSize="16sp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/cyan"
                 android:layout_marginStart="8dp" />

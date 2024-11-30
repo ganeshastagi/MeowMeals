@@ -6,15 +6,18 @@ public class Products {
     private double price;
     private String imageURL;
 
+    private String fullDescription;
+
     public Products() {
 
     }
 
-    public Products(String name, String description, double price, String imageURL) {
+    public Products(String name, String description, double price, String imageURL, String fullDescription) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.imageURL = imageURL;
+        this.fullDescription = fullDescription;
     }
 
     public String getName() {
@@ -47,5 +50,13 @@ public class Products {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public String getFullDescription() {
+        return fullDescription;
+    }
+
+    public void setFullDescription(String fullDescription) {
+        this.fullDescription = fullDescription;
     }
 }

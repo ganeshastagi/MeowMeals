@@ -87,13 +87,16 @@
             android:text="@string/total_0_00"
             android:backgroundTint="@color/LightCyan"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_margin="16sp"/>
 
         <Button
             android:id="@+id/checkout_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/go_to_checkout"
+            android:textSize="16sp"
             android:backgroundTint="@color/cyan"
             android:textColor="@color/black"
             android:textStyle="bold"/>

@@ -44,7 +44,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("product_name");
-        String description = intent.getStringExtra("product_desc");
+        String description = intent.getStringExtra("product_fullDesc");
         String imageURL = intent.getStringExtra("product_img");
         double price = intent.getDoubleExtra("product_price", 0.0);
 
