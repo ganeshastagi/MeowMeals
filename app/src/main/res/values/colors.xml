@@ -2,7 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="cyan">#6103A9F4</color>
+    <color name="background">#c7e6e3</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="primary">#08514c</color>
+    <color name="secondary">#95b3a9</color>
+    <color name="button_text">#fff</color>
+    <color name="text">#FF000000</color>
+    <color name="icons">#BDBDBD</color>
     <color name="LightCyan">#DCD3EEF0</color>
     <color name="light_gray">#437A6666</color>
 </resources>

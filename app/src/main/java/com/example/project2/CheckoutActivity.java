@@ -23,11 +23,10 @@ import java.time.Year;
 
 public class CheckoutActivity extends AppCompatActivity {
 
-    EditText firstName, lastName, aptBuildingNo, streetAddress, cityProvince, pinCode, email, phoneNumber, cardHolderName, cardNumber, cardExpiry, cardCVV;
-    TextView paymentPortal;
+    EditText firstName, aptBuildingNo, streetAddress, cityProvince, pinCode, email, phoneNumber, cardHolderName, cardNumber, cardExpiry, cardCVV, debitCardHolderName, debitCardNumber, debitPostalCode;
     RadioGroup paymentOptions;
-    RadioButton creditDebitOption, paymentPortalOption;
-    LinearLayout creditDebitLayout, paymentPortalLayout;
+    RadioButton creditOption, debitOption;
+    LinearLayout creditLayout, debitLayout;
     Button submitOrder;
 
     @Override
@@ -52,24 +51,26 @@ public class CheckoutActivity extends AppCompatActivity {
         cardNumber = findViewById(R.id.card_number);
         cardExpiry = findViewById(R.id.card_expiry);
         cardCVV = findViewById(R.id.card_cvv);
-        paymentPortal = findViewById(R.id.payment_portal);
+        debitCardHolderName = findViewById(R.id.debit_card_holder_name);
+        debitCardNumber = findViewById(R.id.debit_card_number);
+        debitPostalCode = findViewById(R.id.debit_pin_code);
         paymentOptions = findViewById(R.id.payment_options);
-        creditDebitOption = findViewById(R.id.credit_debit_option);
-        paymentPortalOption = findViewById(R.id.payment_portal_option);
-        creditDebitLayout = findViewById(R.id.credit_debit_layout);
-        paymentPortalLayout = findViewById(R.id.payment_portal_layout);
+        creditOption = findViewById(R.id.credit_option);
+        debitOption = findViewById(R.id.debit_option);
+        creditLayout = findViewById(R.id.credit_layout);
+        debitLayout = findViewById(R.id.debit_layout);
         submitOrder = findViewById(R.id.submit_order);
 
         paymentOptions.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == R.id.payment_portal_option) {
-                paymentPortalLayout.setVisibility(View.VISIBLE);
+            if (checkedId == R.id.credit_option) {
+                creditLayout.setVisibility(View.VISIBLE);
             } else {
-                paymentPortalLayout.setVisibility(View.GONE);
+                creditLayout.setVisibility(View.GONE);
             }
-            if (checkedId == R.id.credit_debit_option) {
-                creditDebitLayout.setVisibility(View.VISIBLE);
+            if (checkedId == R.id.debit_option) {
+                debitLayout.setVisibility(View.VISIBLE);
             } else {
-                creditDebitLayout.setVisibility(View.GONE);
+                debitLayout.setVisibility(View.GONE);
             }
         });
 
@@ -91,6 +92,9 @@ public class CheckoutActivity extends AppCompatActivity {
         String PinCode = pinCode.getText().toString();
         String CardHolderName = cardHolderName.getText().toString();
         String CardExpiry = cardExpiry.getText().toString();
+        String DebitCardHolderName = debitCardHolderName.getText().toString();
+        String DebitCardNumber = debitCardNumber.getText().toString();
+        String DebitPostalCode = debitPostalCode.getText().toString();
 
         if (TextUtils.isEmpty(firstName.getText())) {
             Toast.makeText(this, "Name is required.", Toast.LENGTH_SHORT).show();
@@ -150,7 +154,8 @@ public class CheckoutActivity extends AppCompatActivity {
             Toast.makeText(this, "Please select a payment option.", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (creditDebitOption.isChecked()) {
+
+        if (creditOption.isChecked()) {
             if (TextUtils.isEmpty(cardHolderName.getText())) {
                 Toast.makeText(this, "Card Holder Name is required.", Toast.LENGTH_SHORT).show();
                 return false;
@@ -191,6 +196,30 @@ public class CheckoutActivity extends AppCompatActivity {
 
             if (TextUtils.isEmpty(cardCVV.getText()) || cardCVV.getText().length() != 3) {
                 Toast.makeText(this, "Enter a valid 3-digit CVV", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+        if (debitOption.isChecked()) {
+            if (TextUtils.isEmpty(debitCardHolderName.getText())) {
+                Toast.makeText(this, "Card Holder Name is required.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            if (!DebitCardHolderName.matches("^[a-zA-Z\\s]+$")) {
+                Toast.makeText(this, "Card Holder Name must be only letters.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            if (TextUtils.isEmpty(debitCardNumber.getText()) || debitCardNumber.getText().length() != 16) {
+                Toast.makeText(this, "Enter a valid 16-digit card number.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            if (TextUtils.isEmpty(debitPostalCode.getText()) || debitPostalCode.getText().length() != 6) {
+                Toast.makeText(this, "Postal Code is required.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            if (!DebitPostalCode.matches("^[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]+$")) {
+                Toast.makeText(this, "Invalid Postal Code", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }

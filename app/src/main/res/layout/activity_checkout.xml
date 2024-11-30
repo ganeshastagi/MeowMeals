@@ -6,21 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CheckoutActivity"
-    android:background="@color/cyan">
+    android:background="@color/background">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp" >
+        android:padding="2dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:paddingBottom="16dp"
-            android:background="@color/LightCyan">
+            android:paddingBottom="20sp"
+            android:background="@color/black">
 
             <TextView
                 android:id="@+id/logo"
@@ -29,35 +29,41 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/meow_meals"
-                android:textSize="20sp"
+                android:textSize="24sp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
-                android:gravity="center" />
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/checkout_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:text="@string/checkout"
             android:textSize="30sp"
+            android:fontFamily="@font/aclonica"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/text"
             android:layout_gravity="center"/>
 
         <EditText
             android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:autofillHints="name"
             android:inputType="textPersonName"
             android:hint="@string/full_name"
             android:padding="8dp"
+
             android:background="@android:drawable/edit_text"/>
 
         <EditText
             android:id="@+id/apt_building_No"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:autofillHints="postalAddress"
             android:hint="@string/apt_building_no"
             android:inputType="textPostalAddress"
@@ -68,16 +74,19 @@
             android:id="@+id/street_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:autofillHints="postalAddress"
             android:hint="@string/street_address"
             android:inputType="textPostalAddress"
-            android:padding="8dp"
+
+            android:paddingBottom="28sp"
             android:background="@android:drawable/edit_text"/>
 
         <EditText
             android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:autofillHints="postalAddress"
             android:hint="@string/city_province"
             android:inputType="textPostalAddress"
@@ -88,6 +97,7 @@
             android:id="@+id/pin_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:hint="@string/postal_code"
             android:padding="8dp"
             android:maxLength="6"
@@ -97,6 +107,7 @@
             android:id="@+id/email1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:autofillHints="emailAddress"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
@@ -107,6 +118,7 @@
             android:id="@+id/phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:autofillHints="phone"
             android:hint="@string/phone_number"
             android:inputType="phone"
@@ -117,42 +129,48 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:text="@string/payment_options"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:padding="8dp"
             android:textStyle="bold"
+            android:textColor="@color/text"
             android:layout_marginTop="8dp"
-            android:background="@android:drawable/btn_default"/>
+            />
 
         <RadioGroup
             android:id="@+id/payment_options"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="8dp">
 
             <RadioButton
-                android:id="@+id/credit_debit_option"
+                android:id="@+id/credit_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/credit_debit_card"
+                android:text="@string/credit_card"
                 android:textStyle="bold"
-                android:textSize="16sp"
+                android:textSize="20sp"
+                android:fontFamily="@font/amethysta"
+                android:textColor="@color/text"
                 android:background="@color/light_gray"
                 android:paddingHorizontal="16dp" />
 
             <RadioButton
-                android:id="@+id/payment_portal_option"
+                android:id="@+id/debit_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/payment_portal"
+                android:fontFamily="@font/amethysta"
+                android:text="@string/debit_card"
                 android:textStyle="bold"
-                android:textSize="16sp"
-                android:background="@color/LightCyan"
+                android:textSize="20sp"
+                android:background="@color/light_gray"
                 android:paddingHorizontal="16dp"/>
         </RadioGroup>
 
         <LinearLayout
-            android:id="@+id/credit_debit_layout"
+            android:id="@+id/credit_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -204,34 +222,57 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/payment_portal_layout"
+            android:id="@+id/debit_layout"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:layout_marginTop="8dp">
 
-            <TextView
-                android:id="@+id/payment_portal"
+            <EditText
+                android:id="@+id/debit_card_holder_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/https_meowmeals_com_payments"
-                android:textSize="16sp"
-                android:padding="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:background="@color/white"/>
+                android:autofillHints="name"
+                android:hint="@string/card_holder_name"
+                android:inputType="textPersonName"
+                android:layout_margin="2dp"
+                android:padding="8dp"
+                android:background="@android:drawable/edit_text"/>
+
+            <EditText
+                android:id="@+id/debit_card_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="creditCardNumber"
+                android:hint="@string/card_number"
+                android:inputType="number"
+
+                android:maxLength="16"
+                android:padding="8dp"
+                android:background="@android:drawable/edit_text"/>
+
+            <EditText
+                android:id="@+id/debit_pin_code"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:hint="@string/postal_code"
+                android:padding="8dp"
+                android:maxLength="6"
+                android:background="@android:drawable/edit_text"/>
         </LinearLayout>
 
         <Button
             android:id="@+id/submit_order"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat_medium"
             android:text="@string/submit_order"
-            android:backgroundTint="@color/cyan"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>

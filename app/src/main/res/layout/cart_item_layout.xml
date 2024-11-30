@@ -30,8 +30,8 @@
 
     <ImageView
         android:id="@+id/decrease_quantity"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
         android:layout_marginBottom="96dp"
         android:clickable="true"
         android:contentDescription="@string/decrease_quantity"

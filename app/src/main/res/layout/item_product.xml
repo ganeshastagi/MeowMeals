@@ -32,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:textColor="@color/text"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -49,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:textColor="@color/black"
+                android:textColor="@color/text"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
 
@@ -57,11 +58,12 @@
                 android:id="@+id/add_to_cart_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/cyan"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat_medium"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="8dp"
                 android:text="@string/add_to_cart"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
