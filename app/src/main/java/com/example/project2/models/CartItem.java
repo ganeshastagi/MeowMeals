@@ -3,12 +3,17 @@ package com.example.project2.models;
 public class CartItem {
     private String name;
     private double price;
-    private  int quantity;
+    private int quantity;
+    private String imageURL;
 
-    public CartItem(String name, double price, int quantity) {
+    public CartItem() {
+    }
+
+    public CartItem(String name, double price, int quantity, String imageURL) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.imageURL = imageURL;
     }
 
     public String getName() {
@@ -33,5 +38,13 @@ public class CartItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

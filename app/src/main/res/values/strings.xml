@@ -50,4 +50,14 @@
     <string name="go_to_products">Continue shopping</string>
     <string name="thank_you_message">We have received your order and it will be shipped shortly. You\'ll receive the Shipment Tracking Number to your registered Email and Phone Number.</string>
     <string name="Congrats">Congratulations! you\'ve successfully placed your order.</string>
+    <string name="product_details">Product Details</string>
+    <string name="product_name">Product Name</string>
+    <string name="_10_00">$10.00</string>
+    <string name="_1">1</string>
+    <string name="todo">TODO</string>
+    <string name="subtotal">Subtotal: </string>
+    <string name="gst_hst">GST/HST: </string>
+    <string name="order_summary">Order Summary</string>
+    <string name="total">Total</string>
+    <string name="_0_00">$0.00</string>
 </resources>

@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -20,6 +19,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.time.Year;
+import java.util.ArrayList;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -28,6 +28,7 @@ public class CheckoutActivity extends AppCompatActivity {
     RadioButton creditOption, debitOption;
     LinearLayout creditLayout, debitLayout;
     Button submitOrder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +78,11 @@ public class CheckoutActivity extends AppCompatActivity {
         submitOrder.setOnClickListener(v -> {
             if (validateInputs()) {
                 Toast.makeText(this, "Order Submitted Successfully", Toast.LENGTH_SHORT).show();
+                CartManager cartManager = CartManager.getInstance();
+                cartManager.clearCart();
                 Intent intent = new Intent(this, ThankyouActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

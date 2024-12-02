@@ -11,13 +11,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.project2.CartManager;
 import com.example.project2.ProductDetailsActivity;
 import com.example.project2.R;
+import com.example.project2.models.CartItem;
 import com.example.project2.models.Products;
 
 import java.util.List;
@@ -46,9 +49,13 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
         holder.name.setText(products.getName());
         holder.description.setText(products.getDescription());
         holder.price.setText(format("$%.2f", products.getPrice()));
-
         Glide.with(context).load(products.getImageURL()).into(holder.image);
-        //holder.addToCart.setOnClickListener();
+
+        holder.addToCart.setOnClickListener(v -> {
+            CartItem cartItem = new CartItem(products.getName(), products.getPrice(), 1, products.getImageURL());
+            CartManager.getInstance().addToCart(cartItem);
+            Toast.makeText(context, "Added to cart", Toast.LENGTH_SHORT).show();
+        });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +68,6 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
                 context.startActivity(intent);
             }
         });
-
     }
 
     @Override

@@ -40,66 +40,66 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:fontFamily="@font/aclonica"
         android:paddingHorizontal="10dp"
         android:text="@string/thank_you"
         android:textColor="@color/black"
         android:textSize="40sp"
-        android:fontFamily="@font/aclonica"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.234" />
 
     <TextView
         android:id="@+id/thank_you"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:fontFamily="@font/amethysta"
+        android:padding="10dp"
         android:text="@string/Congrats"
         android:textColor="@color/text"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:fontFamily="@font/amethysta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+        app:layout_constraintVertical_bias="0.383" />
 
     <TextView
         android:id="@+id/thank_you_message"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/amethysta"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="@string/thank_you_message"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <Button
         android:id="@+id/go_to_products_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
+        android:fontFamily="@font/montserrat_medium"
         android:paddingHorizontal="24sp"
         android:text="@string/go_to_products"
         android:textColor="@color/white"
-        android:fontFamily="@font/montserrat_medium"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631" />
+        app:layout_constraintVertical_bias="0.739" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

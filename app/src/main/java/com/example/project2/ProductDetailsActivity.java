@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+import com.example.project2.models.CartItem;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
@@ -42,6 +44,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         decreaseQTY = findViewById(R.id.decrease_quantity);
         quantityInput = findViewById(R.id.quantity_input);
 
+        quantityInput.setText("1");
+
         Intent intent = getIntent();
         String name = intent.getStringExtra("product_name");
         String description = intent.getStringExtra("product_fullDesc");
@@ -55,6 +59,20 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         increaseQTY.setOnClickListener(v -> updateQuantity(1));
         decreaseQTY.setOnClickListener(v -> updateQuantity(-1));
+
+        findViewById(R.id.add_to_cart_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = productName.getText().toString();
+                String imageURL = intent.getStringExtra("product_img");
+                double price = intent.getDoubleExtra("product_price", 0.0);
+                int quantity = Integer.parseInt(quantityInput.getText().toString());
+
+                CartItem cartItem = new CartItem(name, price, quantity, imageURL);
+                CartManager.getInstance().addToCart(cartItem);
+                Toast.makeText(ProductDetailsActivity.this, "Item added to cart!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         findViewById(R.id.go_to_cart_button).setOnClickListener(new View.OnClickListener() {
             @Override
