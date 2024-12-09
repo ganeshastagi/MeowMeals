@@ -7,6 +7,7 @@ public class CartItem {
     private String imageURL;
 
     public CartItem() {
+        
     }
 
     public CartItem(String name, double price, int quantity, String imageURL) {

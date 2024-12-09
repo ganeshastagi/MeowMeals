@@ -29,8 +29,6 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase database;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,11 +108,12 @@ public class RegisterActivity extends AppCompatActivity {
         if (!Password.matches(".*[!@#$%^&*()-+=].*")) {
             Toast.makeText(this, "Password must contain at least a symbol.", Toast.LENGTH_SHORT).show();
         }
+
+
         auth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-
                     UserModel userModel = new UserModel(Name, Email, Password);
                     String id = task.getResult().getUser().getUid();
                     database.getReference().child("users").child(id).setValue(userModel);

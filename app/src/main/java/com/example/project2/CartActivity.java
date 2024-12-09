@@ -48,13 +48,10 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnCar
         checkOutButton = findViewById(R.id.checkout_button);
         goBackToProducts = findViewById(R.id.go_back_to_products);
 
-
-
         cartItems = CartManager.getInstance().getCartItems();
         adapter = new CartAdapter(this, cartItems, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
         updateTotalPrice();
 
         checkOutButton.setOnClickListener(v -> {

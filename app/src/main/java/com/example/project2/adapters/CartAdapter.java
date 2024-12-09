@@ -46,7 +46,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.productQuantity.setText(String.valueOf(item.getQuantity()));
         Glide.with(context).load(item.getImageURL()).into(holder.image);
 
-
         holder.increaseQuantity.setOnClickListener(v -> {
             item.setQuantity(item.getQuantity() + 1);
             listener.onQuantityChanged();
@@ -62,9 +61,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         });
 
         holder.removeItem.setOnClickListener(v -> {
-            cartItems.remove(position);
-            listener.onItemRemoved();
-            notifyItemRemoved(position);
+            if (position >=0 && position < cartItems.size()) {
+                cartItems.remove(position);
+                listener.onItemRemoved();
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, cartItems.size());
+            }
         });
     }
 
@@ -72,6 +74,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public int getItemCount() {
         return cartItems.size();
     }
+
+    public void clearCart() {
+        cartItems.clear();
+        notifyDataSetChanged();
+    }
+
 
     public interface OnCartItemChangeListener {
         void onQuantityChanged();
