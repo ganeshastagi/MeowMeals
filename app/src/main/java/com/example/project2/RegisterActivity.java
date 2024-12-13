@@ -109,7 +109,6 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Password must contain at least a symbol.", Toast.LENGTH_SHORT).show();
         }
 
-
         auth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
