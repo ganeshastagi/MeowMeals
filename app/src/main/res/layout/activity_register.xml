@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="40dp"
         android:hint="@string/name"
         app:boxBackgroundColor="@color/form_field"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         android:hint="@string/email"
         app:boxBackgroundColor="@color/form_field"
         android:layout_marginTop="4dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_input">
 
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/password"
         app:boxBackgroundColor="@color/form_field"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_input_text">
@@ -118,7 +118,7 @@
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toBottomOf="@+id/password_input"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/Or"

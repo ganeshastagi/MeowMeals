@@ -11,6 +11,7 @@
         android:id="@+id/homepage_pets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/home_img"
         android:src="@drawable/pets"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"

@@ -52,8 +52,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="12dp"
             android:contentDescription="@string/product_img" />
 
         <TextView
@@ -64,7 +63,7 @@
             android:layout_marginBottom="8dp"
             android:gravity="center"
             android:paddingTop="8dp"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/text"/>
 
@@ -74,7 +73,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
             android:paddingBottom="16sp"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textColor="@color/text"
             android:layout_marginBottom="6dp"
             android:gravity="center"/>
@@ -83,7 +82,7 @@
             android:id="@+id/product_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:paddingBottom="8dp"
             android:textStyle="bold"
             android:textColor="@color/text"
@@ -133,7 +132,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="8dp">
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
