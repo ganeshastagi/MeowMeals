@@ -39,7 +39,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productDescription = findViewById(R.id.product_desc);
         productPrice = findViewById(R.id.product_price);
         productImage = findViewById(R.id.product_img);
-
         increaseQTY = findViewById(R.id.increase_quantity);
         decreaseQTY = findViewById(R.id.decrease_quantity);
         quantityInput = findViewById(R.id.quantity_input);
