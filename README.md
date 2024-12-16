@@ -16,9 +16,6 @@ When the user logs in successfully, they are led to the products page. Each prod
 4.	Cart Page:
 The Cart page has all the items added by the user. The user can change the quantities of each item, or the user can remove the item from the cart. The Cart also has sections like Subtotal, Tax charged, and the total of all the items.
 
-
-
-
 5.	Checkout Page:
 The checkout page has the required fields like Full Name, Email, Contact Number, Address and Payment options include Credit Card and Debit Card.
 
